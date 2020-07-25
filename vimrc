@@ -4,13 +4,18 @@ let g:mapleader=" "
 let s:is_gvim = has('gui_running')
 if s:is_gvim
   set guifont=Sarasa\ Term\ CL\ 14
+  let g:gruvbox_italic = 1
+  let g:gruvbox_italicize_strings = 1
+else
+  let g:gruvbox_italic = 0
+  let g:gruvbox_italicize_strings = 0
 endif
 
 syntax enable
 inoremap jk <ESC>:w<CR>
 noremap <Leader><CR> :nohlsearch<CR>
-" noremap <Leader>n :bn<CR>
-" noremap <Leader>p :bp<CR>
+noremap <Leader>n :bn<CR>
+noremap <Leader>p :bp<CR>
 " noremap <Leader>d :bdelete<CR>
 
 " fuck q的记录功能,总tm按错
@@ -41,9 +46,6 @@ noremap <Leader>l <C-w>l
 noremap <Leader>j <C-w>j
 noremap <Leader>k <C-w>k
 noremap <Leader>h <C-w>h
-" noremap <silent> tu :tabe<CR>
-" noremap <silent> tl :tabnext<CR>
-" noremap <silent> th :-tabnext<CR>
 xnoremap <silent>Y "+y
 nnoremap tp "+P
 
@@ -72,7 +74,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set autoindent
-set smartindent " what?? 一点不tm smart
+set smartindent
 set wrap
 set showcmd
 set showmode
@@ -81,7 +83,7 @@ set hlsearch
 set incsearch
 set smartcase
 set noswapfile
-set signcolumn=auto " 治理nvim下的丑边框=>治理失败
+set signcolumn=auto
 set foldcolumn=0
 set ignorecase
 set history=1000
@@ -164,6 +166,7 @@ Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-easy-align'
 
+" Plug 'godlygeek/tabular'
 " Plug 'skywind3000/asyncrun.vim'
 " Plug 'mileszs/ack.vim'
 " Plug 'peitalin/vim-jsx-typescript'
@@ -181,11 +184,4 @@ colorscheme gruvbox
 " let g:gruvbox_material_background = 'hard'
 " let g:gruvbox_plugin_hi_groups = 1
 " let g:gruvbox_filetype_hi_groups = 1
-" if s:is_gvim
-  " let g:gruvbox_italic = 1
-  " let g:gruvbox_italicize_strings = 1
-" else
-  " let g:gruvbox_italic = 0
-  " let g:gruvbox_italicize_strings = 0
-" endif
 " let s:colorscheme = get(g:, 'colors_name', 'default')
