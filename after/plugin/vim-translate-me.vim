@@ -1,0 +1,1 @@
+nmap gY <Plug>Translate
