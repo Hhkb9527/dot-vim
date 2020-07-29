@@ -3,7 +3,7 @@ let g:airline_theme='wombat'
 "set termencoding=cp936
 " language messages zh_CN.UTF-8
 set helplang=cn
-set ambiwidth=double
+" set ambiwidth=double
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1

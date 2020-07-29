@@ -1,7 +1,9 @@
 " font: Iosevka Term curly
 let g:mapleader=" "
-
+let s:is_win = has('win32')
 let s:is_gvim = has('gui_running')
+let s:is_tty = !match(&term, 'linux') || !match(&term, 'win32')
+
 if s:is_gvim
   set guifont=Sarasa\ Term\ CL\ 14
   let g:gruvbox_italic = 1
@@ -10,6 +12,37 @@ else
   let g:gruvbox_italic = 0
   let g:gruvbox_italicize_strings = 0
 endif
+
+if !s:is_tty
+  if s:is_win
+    set renderoptions=type:directx
+    let &listchars = 'tab:▸ ,extends:>,precedes:<,nbsp:.'
+    let &showbreak = '-> '
+    highlight VertSplit ctermfg=242
+    augroup vimrc
+      autocmd InsertEnter * set listchars-=trail:⣿
+      autocmd InsertLeave * set listchars+=trail:⣿
+    augroup END
+  elseif has('multi_byte') && &encoding ==# 'utf-8'
+    let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
+    let &fillchars = 'diff: '  " ▚
+    let &showbreak = '↳ '
+    highlight VertSplit ctermfg=242
+    augroup vimrc
+      autocmd InsertEnter * set listchars-=trail:⣿
+      autocmd InsertLeave * set listchars+=trail:⣿
+    augroup END
+  else
+    let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
+    "let &fillchars = 'stlnc:#'
+    let &showbreak = '-> '
+    augroup vimrc
+      autocmd InsertEnter * set listchars-=trail:.
+      autocmd InsertLeave * set listchars+=trail:.
+    augroup END
+  endif
+endif " s:is_tty
+
 
 syntax enable
 inoremap jk <ESC>:w<CR>
@@ -94,7 +127,6 @@ set encoding=utf-8
 set fileencodings=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 scriptencoding utf-8
 set termencoding=utf-8
-set ambiwidth=double
 set t_Co=256
 set nocompatible
 set backspace=indent,eol,start
@@ -131,7 +163,6 @@ Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'javascript', 'typescrip
 Plug 'othree/html5.vim', {'for': 'html' }
 Plug 'dense-analysis/ale'
 Plug 'mhinz/vim-startify'
-Plug 'luochen1990/rainbow'
 Plug 'markonm/traces.vim'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
@@ -151,6 +182,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
+Plug 'luochen1990/rainbow'
 " @description: enhances netrw.
 " @command: I gh ~
 " let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -165,6 +197,7 @@ Plug 'tpope/vim-surround'
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-easy-align'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Plug 'godlygeek/tabular'
 " Plug 'skywind3000/asyncrun.vim'
@@ -185,3 +218,6 @@ colorscheme gruvbox
 " let g:gruvbox_plugin_hi_groups = 1
 " let g:gruvbox_filetype_hi_groups = 1
 " let s:colorscheme = get(g:, 'colors_name', 'default')
+
+" 设置背景透明
+" hi Normal guibg=NONE ctermbg=NONE
