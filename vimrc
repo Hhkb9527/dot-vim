@@ -77,8 +77,10 @@ noremap <silent> <C-t>j :set nosplitbelow<CR>:split<CR>
 noremap <silent> <C-t>k :set splitbelow<CR>:split<CR>
 noremap <silent> <C-t>u  <C-w>t<C-w>H
 noremap <silent> <C-t>i  <C-w>t<C-w>K
-noremap <silent> H :vertical resize -8<CR>
-noremap <silent> L :vertical resize +8<CR>
+" noremap <silent> H :vertical resize -8<CR>
+" noremap <silent> L :vertical resize +8<CR>
+noremap <silent> H ^
+noremap <silent> L $
 noremap <Leader>l <C-w>l
 noremap <Leader>j <C-w>j
 noremap <Leader>k <C-w>k
