@@ -4,6 +4,10 @@ let s:is_win = has('win32')
 let s:is_gvim = has('gui_running')
 let s:is_tty = !match(&term, 'linux') || !match(&term, 'win32')
 
+if !has('gui_running')
+  set t_Co=256
+endif
+
 if s:is_gvim
   set guifont=Sarasa\ Term\ CL\ 14
   let g:gruvbox_italic = 1
@@ -125,9 +129,8 @@ set novisualbell
 set t_vb=
 set encoding=utf-8
 set fileencodings=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
-scriptencoding utf-8
 set termencoding=utf-8
-set t_Co=256
+" scriptencoding utf-8
 set nocompatible
 set backspace=indent,eol,start
 set foldmethod=indent
@@ -151,10 +154,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
+" Plug 'sickill/vim-monokai'
 " Plug 'lifepillar/vim-gruvbox8'
-Plug 'joshdick/onedark.vim'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'joshdick/onedark.vim'
+" Plug 'altercation/vim-colors-solarized'
 
 Plug 'itchyny/vim-cursorword'
 Plug 'preservim/nerdcommenter'
@@ -199,6 +204,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-easy-align'
 Plug 'octol/vim-cpp-enhanced-highlight'
 
+" Plug 'Shougo/denite.nvim'
 " Plug 'godlygeek/tabular'
 " Plug 'skywind3000/asyncrun.vim'
 " Plug 'mileszs/ack.vim'
@@ -207,9 +213,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " Plug 'kana/vim-textobj-entire'
 call plug#end()
 
-let g:gruvbox_contrast_dark='medium'
-" let g:solarized_termcolors=256
-" colorscheme solarized
+" let g:gruvbox_contrast_dark='middle'
 set background=dark
 colorscheme gruvbox
 
