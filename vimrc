@@ -47,6 +47,7 @@ if !s:is_tty
   endif
 endif " s:is_tty
 
+let g:powerline_pycmd="py3"
 
 syntax enable
 inoremap jk <ESC>:w<CR>
@@ -137,7 +138,7 @@ set nocompatible
 set backspace=indent,eol,start
 set foldmethod=indent
 set foldlevelstart=99
-set laststatus=1
+set laststatus=2
 set autochdir
 set hidden
 set nobackup
@@ -163,7 +164,7 @@ augroup END
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
+Plug 'powerline/powerline'
 " Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 " Plug 'sickill/vim-monokai'
