@@ -150,7 +150,15 @@ filetype indent on
 filetype plugin on
 
 " 让光标回到上次打开文件时的位置
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup vimrc
+  " go back to where you exited
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+        \   exe "normal g'\"" |
+        \ endif
+  " save on focus lost
+  autocmd FocusLost * :silent! wa
+augroup END
 
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
