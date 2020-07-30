@@ -47,6 +47,7 @@ if !s:is_tty
   endif
 endif " s:is_tty
 
+" powerline font 没生效
 let g:powerline_pycmd="py3"
 
 syntax enable
@@ -150,7 +151,6 @@ filetype on
 filetype indent on
 filetype plugin on
 
-" 让光标回到上次打开文件时的位置
 augroup vimrc
   " go back to where you exited
   autocmd BufReadPost *
@@ -186,6 +186,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'Yggdroot/LeaderF-marks'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-rooter'
