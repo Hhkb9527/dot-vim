@@ -17,6 +17,15 @@ let g:Lf_NormalMap = {
       \ "Colorscheme":    [["<ESC>", ':exec g:Lf_py "colorschemeExplManager.quit()"<CR>']],
       \ }
 
+" let g:leaderf_github_stars_username='Elijah-F'
+" Max length of line, default is 100.
+" If maxline is less than the longest repository name, only the repository name is shown.
+" So you may set it to 0 to disable description.
+" let g:leaderf_github_stars_maxline=80
+
+" Optional. Higher rate limit when using token
+" let g:leaderf_github_stars_maxline = 'your github token'
+
 nnoremap <Leader>fh :call <SID>search_here()<CR>
 nnoremap <Leader>fp :call <SID>search_project()<CR>
 nnoremap <Leader>fk :LeaderfMarks<CR>
