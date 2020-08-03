@@ -47,10 +47,29 @@ if !s:is_tty
   endif
 endif " s:is_tty
 
+augroup vimrc
+  " go back to where you exited
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+        \   exe "normal g'\"" |
+        \ endif
+  " save on focus lost
+  autocmd FocusLost * :silent! wa
+augroup END
+
+if empty($TMUX)
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+else
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+endif
+
 " powerline font 没生效
 let g:powerline_pycmd="py3"
 
-syntax enable
 inoremap jk <ESC>:w<CR>
 noremap <Leader><CR> :nohlsearch<CR>
 noremap <Leader>n :bn<CR>
@@ -62,16 +81,6 @@ nnoremap q <nop>
 xnoremap < <gv
 xnoremap > >gv
 nnoremap Zll :qall<ESC>
-
-if empty($TMUX)
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-else
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-endif
 
 noremap <silent> <C-t>l :set splitright<CR>:vsplit<CR>
 noremap <silent> <C-t>h :set nosplitright<CR>:vsplit<CR>
@@ -105,6 +114,7 @@ nnoremap ]<space>   :<C-u>put =repeat(nr2char(10), v:count1)<CR>
 " 调用寄存器历史
 nnoremap <Leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
+syntax enable
 set nu
 set list
 set cursorline
@@ -150,16 +160,6 @@ set shortmess+=c
 filetype on
 filetype indent on
 filetype plugin on
-
-augroup vimrc
-  " go back to where you exited
-  autocmd BufReadPost *
-        \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-        \   exe "normal g'\"" |
-        \ endif
-  " save on focus lost
-  autocmd FocusLost * :silent! wa
-augroup END
 
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
