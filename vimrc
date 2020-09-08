@@ -224,6 +224,8 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " Plug 'peitalin/vim-jsx-typescript'
 " Plug 'vim-python/python-syntax', { 'for': 'python' }
 " Plug 'kana/vim-textobj-entire'
+
+Plug 'iamcco/markdown-preview.vim'
 call plug#end()
 
 " let g:gruvbox_contrast_dark='middle'
