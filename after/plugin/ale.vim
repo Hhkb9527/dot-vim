@@ -25,4 +25,5 @@ let g:ale_fixers = {
   \ 'html': ['tidy'],
   \ 'c': ['clang-format'],
   \ 'cpp': ['clang-format'],
+  \ 'python': ['autopep8', 'isort'],
   \ }
