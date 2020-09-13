@@ -7,7 +7,8 @@ let g:Lf_UseCache = 0
 let g:Lf_MruMaxFiles=500
 let g:Lf_ShowRelativePath = 1
 let g:Lf_ShortcutF = ''
-let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2" }
+let g:Lf_StlColorscheme = 'default'
+let g:Lf_StlSeparator = { 'left': '', 'right': ''  }
 let g:Lf_NormalMap = {
       \ "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit()"<CR>']],
       \ "Buffer": [["<ESC>", ':exec g:Lf_py "bufExplManager.quit()"<CR>']],
@@ -15,7 +16,11 @@ let g:Lf_NormalMap = {
       \ "Tag":    [["<ESC>", ':exec g:Lf_py "tagExplManager.quit()"<CR>']],
       \ "Function":    [["<ESC>", ':exec g:Lf_py "functionExplManager.quit()"<CR>']],
       \ "Colorscheme":    [["<ESC>", ':exec g:Lf_py "colorschemeExplManager.quit()"<CR>']],
-      \ }
+      \}
+let g:Lf_WildIgnore = {
+      \ 'dir': ['.svn', '.git'],
+      \ 'file': ['*.bak', '*.exe', '*.so', '*.o', '*.py[co]', '*.sw?']
+      \}
 
 let g:leaderf_github_stars_username='Elijah-F'
 " Max length of line, default is 100.
