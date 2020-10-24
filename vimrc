@@ -226,6 +226,8 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " Plug 'kana/vim-textobj-entire'
 
 Plug 'iamcco/markdown-preview.vim'
+
+Plug 'puremourning/vimspector'
 call plug#end()
 
 " let g:gruvbox_contrast_dark='middle'
@@ -237,6 +239,3 @@ colorscheme gruvbox
 " let g:gruvbox_plugin_hi_groups = 1
 " let g:gruvbox_filetype_hi_groups = 1
 " let s:colorscheme = get(g:, 'colors_name', 'default')
-
-" 设置背景透明
-" hi Normal guibg=NONE ctermbg=NONE
