@@ -68,7 +68,7 @@ else
 endif
 
 " powerline font 没生效
-let g:powerline_pycmd="py3"
+" let g:powerline_pycmd="py3"
 
 inoremap jk <ESC>:w<CR>
 noremap <Leader><CR> :nohlsearch<CR>
@@ -121,9 +121,9 @@ set cursorline
 set relativenumber
 set smarttab
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set autoindent
 set smartindent
 set wrap
@@ -164,7 +164,7 @@ filetype plugin on
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'powerline/powerline'
+" Plug 'powerline/powerline'
 " Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 " Plug 'sickill/vim-monokai'
