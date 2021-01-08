@@ -124,11 +124,11 @@ set showmode
 set wildmenu
 set hlsearch
 set incsearch
+set ignorecase   "ignorecase 存在 smartcase 才会生效
 set smartcase
 set noswapfile
 set signcolumn=auto
 set foldcolumn=0
-set ignorecase
 set history=1000
 set noerrorbells " no BB
 set novisualbell
