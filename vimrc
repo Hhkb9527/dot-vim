@@ -77,7 +77,7 @@ noremap <Leader>p :bp<CR>
 " noremap <Leader>d :bdelete<CR>
 
 " fuck q的记录功能,总tm按错
-nnoremap q <nop>
+" nnoremap q <nop>
 xnoremap < <gv
 xnoremap > >gv
 nnoremap Zll :qall<ESC>
@@ -88,15 +88,10 @@ noremap <silent> <C-t>j :set nosplitbelow<CR>:split<CR>
 noremap <silent> <C-t>k :set splitbelow<CR>:split<CR>
 noremap <silent> <C-t>u  <C-w>t<C-w>H
 noremap <silent> <C-t>i  <C-w>t<C-w>K
+
+" 需要gvim的X11支持
 xnoremap <silent>Y "+y
 nnoremap tp "+P
-
-vnoremap qs "zy:%s`<C-R>z``g<left><left>
-nnoremap qs :%s`<C-R><C-W>``g<left><left>
-vnoremap qcs "zy:%s`<C-R>z``gc<left><left><left>
-nnoremap qcs :%s`<C-R><C-W>``gc<left><left><left>
-" vnoremap qS   "zy:%S`<C-R>z``g<left><left>
-" nnoremap qS   :%S`<C-R><C-W>``g<left><left>
 
 nnoremap ]e         :<C-u>execute 'move +'. v:count1<CR>
 nnoremap [e         :<C-u>execute 'move -1-'. v:count1<CR>
