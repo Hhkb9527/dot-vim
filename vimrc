@@ -164,7 +164,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'lfv89/vim-interestingwords' " 默认<leader>k,每次更新记得改下源码
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'javascript', 'typescript', 'typescript.tsx']  }
 Plug 'othree/html5.vim', {'for': 'html' }
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
+Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
 Plug 'markonm/traces.vim'
 Plug 'ervandew/supertab'
@@ -174,7 +175,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'Yggdroot/LeaderF-marks'
-Plug 'bennyyip/LeaderF-github-stars' " 没生效
+" Plug 'bennyyip/LeaderF-github-stars' " 没生效
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-rooter'
