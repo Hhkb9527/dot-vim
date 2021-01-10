@@ -5,9 +5,12 @@ nmap <silent> <leader>+ <Plug>(ale_enable_buffer)]
 
 let g:ale_fix_on_save = 0
 let g:ale_set_highlights = 0
-let g:ale_sign_error = '☠ '
-let g:ale_sign_warning = '☢ '
-let g:ale_statusline_format = ['☠  %d', '☢  %d', '☪  OK']
+
+" ∑ { n ∈ ▲ } 🅇(n) ○-> Ⓨ[n] ▢△◈
+" ✗/✘ 的输入方法: Ctrl-v u 2717/2718
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '✗'
+" let g:ale_statusline_format = ['☠  %d', '☢  %d', '☪  OK']
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'

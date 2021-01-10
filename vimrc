@@ -131,7 +131,6 @@ set t_vb=
 set encoding=utf-8
 set fileencodings=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 set termencoding=utf-8
-" scriptencoding utf-8
 set nocompatible
 set backspace=indent,eol,start
 set foldmethod=indent
