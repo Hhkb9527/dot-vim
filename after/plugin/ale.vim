@@ -15,7 +15,7 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-" ~/.pylintc中不能存在bug，否则linter将不会生效，可以提前使用python命令检测
+" ~/.pylintc中不能存在bug，否则linter将不会生效，可以提前使用pylint命令检测
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'typescript': ['eslint'],
@@ -31,5 +31,5 @@ let g:ale_fixers = {
   \ 'html': ['tidy'],
   \ 'c': ['clang-format'],
   \ 'cpp': ['clang-format'],
-  \ 'python': ['autopep8', 'isort'],
+  \ 'python': ['black', 'isort'],
   \ }
