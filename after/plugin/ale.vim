@@ -19,7 +19,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'typescript': ['eslint'],
-  \ 'python': ['pylint'],
+  \ 'python': ['pylint', 'mypy'],
   \ }
 let g:ale_fixers = {
   \ 'vim': [],
