@@ -57,6 +57,9 @@ augroup vimrc
   autocmd FocusLost * :silent! wa
 augroup END
 
+autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
 " if empty($TMUX)
   " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
