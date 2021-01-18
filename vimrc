@@ -222,7 +222,13 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'iamcco/markdown-preview.vim'
 
 Plug 'puremourning/vimspector'
+Plug 'Yggdroot/indentLine'
 call plug#end()
+
+" Yggdroot/indentLine
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+
 
 " let g:gruvbox_contrast_dark='middle'
 set background=dark
