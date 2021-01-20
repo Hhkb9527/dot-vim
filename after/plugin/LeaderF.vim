@@ -10,6 +10,8 @@ let g:Lf_ShowRelativePath = 1
 let g:Lf_ShortcutF = ''
 let g:Lf_StlColorscheme = 'default'
 let g:Lf_StlSeparator = { 'left': '', 'right': ''  }
+let g:Lf_ShowDevIcons = 1
+let g:Lf_DevIconsFont = ""
 let g:Lf_NormalMap = {
       \ "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit()"<CR>']],
       \ "Buffer": [["<ESC>", ':exec g:Lf_py "bufExplManager.quit()"<CR>']],
@@ -35,7 +37,7 @@ let g:leaderf_github_stars_maxline=80
 nnoremap <Leader>fh :call <SID>search_here()<CR>
 nnoremap <Leader>fp :call <SID>search_project()<CR>
 nnoremap <Leader>fk :LeaderfMarks<CR>
-noremap <Leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+noremap <Leader>fs :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 noremap <Leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <Leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 noremap <Leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
