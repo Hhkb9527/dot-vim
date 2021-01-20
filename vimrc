@@ -179,7 +179,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'AndrewRadev/linediff.vim'
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'Yggdroot/LeaderF-marks'
 " Plug 'bennyyip/LeaderF-github-stars' " 没生效
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
