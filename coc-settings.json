@@ -1,5 +1,6 @@
 {
   "tsserver.trace.server": "verbose",
+  "diagnostic.displayByAle": true,
   "snippets.extends": {
     "cpp": [
       "c"
