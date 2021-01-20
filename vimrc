@@ -74,17 +74,11 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
-" powerline font 没生效
-" let g:powerline_pycmd="py3"
-
 inoremap jk <ESC>:w<CR>
 noremap <Leader><CR> :nohlsearch<CR>
 noremap <Leader>n :bn<CR>
 noremap <Leader>p :bp<CR>
-" noremap <Leader>d :bdelete<CR>
 
-" fuck q的记录功能,总tm按错
-" nnoremap q <nop>
 xnoremap < <gv
 xnoremap > >gv
 nnoremap Zll :qall<ESC>
@@ -203,19 +197,11 @@ Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-easy-align'
 Plug 'octol/vim-cpp-enhanced-highlight'
-
-" Plug 'Shougo/denite.nvim'
-" Plug 'godlygeek/tabular'
-" Plug 'skywind3000/asyncrun.vim'
-" Plug 'mileszs/ack.vim'
-" Plug 'peitalin/vim-jsx-typescript'
-" Plug 'vim-python/python-syntax', { 'for': 'python' }
-" Plug 'kana/vim-textobj-entire'
-
+Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.vim'
-
 Plug 'puremourning/vimspector'
 Plug 'Yggdroot/indentLine'
+" Plug 'mileszs/ack.vim'
 call plug#end()
 
 set background=dark
