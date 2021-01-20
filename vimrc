@@ -157,20 +157,13 @@ filetype plugin on
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'powerline/powerline'
-" Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
-" Plug 'sickill/vim-monokai'
-" Plug 'lifepillar/vim-gruvbox8'
-" Plug 'joshdick/onedark.vim'
-" Plug 'altercation/vim-colors-solarized'
 
 Plug 'itchyny/vim-cursorword'
 Plug 'preservim/nerdcommenter'
 Plug 'lfv89/vim-interestingwords' " 默认<leader>k,每次更新记得改下源码
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'javascript', 'typescript', 'typescript.tsx']  }
 Plug 'othree/html5.vim', {'for': 'html' }
-" Plug 'dense-analysis/ale'
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
 Plug 'markonm/traces.vim'
@@ -225,17 +218,5 @@ Plug 'puremourning/vimspector'
 Plug 'Yggdroot/indentLine'
 call plug#end()
 
-" Yggdroot/indentLine
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-
-
-
-" let g:gruvbox_contrast_dark='middle'
 set background=dark
 colorscheme gruvbox
-
-" colorscheme gruvbox8
-" let g:gruvbox_material_background = 'hard'
-" let g:gruvbox_plugin_hi_groups = 1
-" let g:gruvbox_filetype_hi_groups = 1
-" let s:colorscheme = get(g:, 'colors_name', 'default')
