@@ -1,3 +1,3 @@
-let g:NERDSpaceDelims = 2
+let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
-let g:NERDDefaultAlign = 'right'
+let g:NERDDefaultAlign = 'left'
