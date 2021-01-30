@@ -90,7 +90,10 @@ noremap <silent> <C-t>k :set splitbelow<CR>:split<CR>
 noremap <silent> <C-t>u  <C-w>t<C-w>H
 noremap <silent> <C-t>i  <C-w>t<C-w>K
 
-" 需要gvim的X11支持
+noremap <silent> <C-t>p :set paste!<CR>:set number!<CR>:set relativenumber!<CR>
+
+
+" 需要gvim的X11支持, weterm中无法使用
 xnoremap <silent>Y "+y
 nnoremap tp "+P
 
@@ -103,9 +106,9 @@ nnoremap ]<space>   :<C-u>put =repeat(nr2char(10), v:count1)<CR>
 nnoremap <Leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
 syntax enable
-set nu
 set list
 set cursorline
+set number
 set relativenumber
 set smarttab
 set expandtab
@@ -162,13 +165,11 @@ Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
 Plug 'markonm/traces.vim'
 Plug 'ervandew/supertab'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'Yggdroot/LeaderF-marks'
-" Plug 'bennyyip/LeaderF-github-stars' " 没生效
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-rooter'
@@ -202,6 +203,12 @@ Plug 'iamcco/markdown-preview.vim'
 Plug 'puremourning/vimspector'
 Plug 'Yggdroot/indentLine'
 " Plug 'mileszs/ack.vim'
+
+" 让代码更好看
+" Plug 'kristijanhusak/vim-carbon-now-sh'
+
+" coc-pairs replace it
+" Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 set background=dark
