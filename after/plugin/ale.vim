@@ -36,4 +36,5 @@ let g:ale_fixers = {
   \ 'c': ['clang-format'],
   \ 'cpp': ['clang-format'],
   \ 'python': ['black', 'isort'],
+  \ 'go': ['goimports'],
   \ }

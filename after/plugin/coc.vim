@@ -7,6 +7,7 @@ let g:coc_global_extensions = [
       \ 'coc-vimlsp',
       \ 'coc-yaml',
       \ 'coc-pairs',
+      \ 'coc-go',
       \ ]
 
 if has("patch-8.1.1564")
