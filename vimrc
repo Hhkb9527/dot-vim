@@ -183,6 +183,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
 Plug 'luochen1990/rainbow'
+Plug 'jiangmiao/auto-pairs'
 " @description: enhances netrw.
 " @command: I gh ~
 " let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -208,7 +209,6 @@ Plug 'Yggdroot/indentLine'
 " Plug 'kristijanhusak/vim-carbon-now-sh'
 
 " coc-pairs replace it
-" Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 set background=dark
