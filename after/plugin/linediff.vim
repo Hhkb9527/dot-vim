@@ -1,2 +1,2 @@
-noremap zf :Linediff<cr>
-nnoremap zd :LinediffReset<cr>
+vnoremap zd :Linediff<CR>
+autocmd User LinediffBufferReady nnoremap <buffer> q :LinediffReset<CR>
