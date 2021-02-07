@@ -15,7 +15,7 @@ let g:ale_statusline_format = ['☠  %d', '☢  %d', '☪  OK']
 " let g:ale_echo_msg_warning_str = '☢'
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_format = '[%linter%] %s [%code%][%severity%]'
 let g:ale_disable_lsp = 1
 " let g:airline#extensions#ale#enabled = 1
 
