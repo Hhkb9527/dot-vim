@@ -1,12 +1,13 @@
 " Plugin: neoclide/coc.nvim
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
-      \ 'coc-python',
+      \ 'coc-pyright',
       \ 'coc-json',
       \ 'coc-snippets',
       \ 'coc-vimlsp',
       \ 'coc-yaml',
       \ 'coc-go',
+      \ 'coc-clangd'
       \ ]
 
 if has("patch-8.1.1564")
@@ -55,9 +56,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Highlight the symbol and its references when holding the cursor
-" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming
 nmap <F2> <Plug>(coc-rename)
