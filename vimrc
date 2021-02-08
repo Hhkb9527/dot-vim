@@ -146,14 +146,21 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+set showtabline=2
 filetype on
 filetype indent on
 filetype plugin on
 
+
 call plug#begin('~/.vim/plugged')
+
+Plug 'morhetz/gruvbox'
+
+Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
+" Plug 'itchyny/lightline.vim'
+" Plug 'mengelbrecht/lightline-bufferline'
 
 Plug 'itchyny/vim-cursorword'
 Plug 'preservim/nerdcommenter'
