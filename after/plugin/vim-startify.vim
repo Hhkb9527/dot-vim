@@ -39,3 +39,7 @@ let g:startify_list_order = [
 " let g:startify_files_number = 15
 let g:startify_update_oldfiles = 1
 let g:startify_use_env = 1
+
+function! StartifyEntryFormat()
+    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
