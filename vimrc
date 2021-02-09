@@ -46,18 +46,38 @@ if !s:is_tty
   endif
 endif " s:is_tty
 
+" Return to last edit position when opening files
 augroup vimrc
-  " go back to where you exited
   autocmd BufReadPost *
         \ if line("'\"") > 0 && line ("'\"") <= line("$") |
         \   exe "normal g'\"" |
         \ endif
-  " save on focus lost
   autocmd FocusLost * :silent! wa
 augroup END
 
 autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
+" Visual mode pressing * or # searches for the current selection
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+function! VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", "\\/.*'$^~[]")
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'gv'
+        call CmdLine("Ack '" . l:pattern . "' " )
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
 
 " if empty($TMUX)
   " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -74,9 +94,9 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 inoremap jk <ESC>:w<CR>
-noremap <Leader><CR> :nohlsearch<CR>
-noremap <Leader>n :bn<CR>
-noremap <Leader>p :bp<CR>
+noremap <silent> <Leader><CR> :nohlsearch<CR>
+noremap <silent> <Leader>n :bn<CR>
+noremap <silent> <Leader>p :bp<CR>
 
 xnoremap < <gv
 xnoremap > >gv
@@ -89,10 +109,10 @@ noremap <silent> <C-t>k :set splitbelow<CR>:split<CR>
 noremap <silent> <C-t>u  <C-w>t<C-w>H
 noremap <silent> <C-t>i  <C-w>t<C-w>K
 
+" enter/exit paste mode and set/unset number
 noremap <silent> <C-t>p :set paste!<CR>:set number!<CR>:set relativenumber!<CR>
 
-
-" 需要gvim的X11支持, weterm中无法使用
+" need +X11 to support it
 xnoremap <silent>Y "+y
 nnoremap tp "+P
 
@@ -122,7 +142,7 @@ set showmode
 set wildmenu
 set hlsearch
 set incsearch
-set ignorecase   "ignorecase 存在 smartcase 才会生效
+set ignorecase   " smartcase relys on ignorecase
 set smartcase
 set noswapfile
 set signcolumn=auto
@@ -153,15 +173,12 @@ filetype plugin on
 
 
 call plug#begin('~/.vim/plugged')
-
 Plug 'morhetz/gruvbox'
-
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'itchyny/lightline.vim'
 " Plug 'mengelbrecht/lightline-bufferline'
-
 Plug 'itchyny/vim-cursorword'
 Plug 'preservim/nerdcommenter'
 Plug 'lfv89/vim-interestingwords'
@@ -210,9 +227,6 @@ Plug 'iamcco/markdown-preview.vim'
 Plug 'puremourning/vimspector'
 Plug 'Yggdroot/indentLine'
 " Plug 'mileszs/ack.vim'
-
-" 让代码更好看
-" Plug 'kristijanhusak/vim-carbon-now-sh'
 call plug#end()
 
 set background=dark
