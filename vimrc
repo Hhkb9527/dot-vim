@@ -5,6 +5,10 @@ let s:is_tty = !match(&term, 'linux') || !match(&term, 'win32')
 
 if !has('gui_running')
   set t_Co=256
+  if has("X11")
+    xnoremap <silent>Y "+y
+    nnoremap tp "+P
+  endif
 endif
 
 if s:is_gvim
@@ -111,10 +115,6 @@ noremap <silent> <C-t>i  <C-w>t<C-w>K
 
 " enter/exit paste mode and set/unset number
 noremap <silent> <C-t>p :set paste!<CR>:set number!<CR>:set relativenumber!<CR>
-
-" need +X11 to support it
-xnoremap <silent>Y "+y
-nnoremap tp "+P
 
 nnoremap ]e         :<C-u>execute 'move +'. v:count1<CR>
 nnoremap [e         :<C-u>execute 'move -1-'. v:count1<CR>
