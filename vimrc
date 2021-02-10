@@ -11,6 +11,17 @@ if !has('gui_running')
   endif
 endif
 
+
+" enable true color, use following script to check in vim terminal
+" https://github.com/gnachman/iTerm2/blob/master/tests/24-bit-color.sh
+if has("termguicolors")
+    " fix bug for vim
+    set t_8f=[38;2;%lu;%lu;%lum
+    set t_8b=[48;2;%lu;%lu;%lum
+    set termguicolors
+endif
+
+
 if s:is_gvim
   set guifont=Sarasa\ Term\ CL\ 14
   let g:gruvbox_italic = 1
@@ -229,5 +240,6 @@ Plug 'Yggdroot/indentLine'
 " Plug 'mileszs/ack.vim'
 call plug#end()
 
+let g:gruvbox_italic=1
 set background=dark
 colorscheme gruvbox
