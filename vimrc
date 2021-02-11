@@ -11,7 +11,6 @@ if !has('gui_running')
   endif
 endif
 
-
 " enable true color, use following script to check in vim terminal
 " https://github.com/gnachman/iTerm2/blob/master/tests/24-bit-color.sh
 if has("termguicolors")
@@ -19,16 +18,6 @@ if has("termguicolors")
     set t_8f=[38;2;%lu;%lu;%lum
     set t_8b=[48;2;%lu;%lu;%lum
     set termguicolors
-endif
-
-
-if s:is_gvim
-  set guifont=Sarasa\ Term\ CL\ 14
-  let g:gruvbox_italic = 1
-  let g:gruvbox_italicize_strings = 1
-else
-  let g:gruvbox_italic = 0
-  let g:gruvbox_italicize_strings = 0
 endif
 
 if !s:is_tty
@@ -43,12 +32,12 @@ if !s:is_tty
     augroup END
   elseif has('multi_byte') && &encoding ==# 'utf-8'
     let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
-    let &fillchars = 'diff: '  " ▚
+    let &fillchars = 'diff: '  " ⣿
     let &showbreak = '↳ '
     highlight VertSplit ctermfg=242
     augroup vimrc
-      autocmd InsertEnter * set listchars-=trail:⣿
-      autocmd InsertLeave * set listchars+=trail:⣿
+      autocmd InsertEnter * set listchars-=trail:▚
+      autocmd InsertLeave * set listchars+=trail:▚
     augroup END
   else
     let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
@@ -70,6 +59,7 @@ augroup vimrc
   autocmd FocusLost * :silent! wa
 augroup END
 
+" use <F5> to exec python script
 autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
@@ -241,5 +231,6 @@ Plug 'Yggdroot/indentLine'
 call plug#end()
 
 let g:gruvbox_italic=1
+let g:gruvbox_italicize_strings=1
 set background=dark
 colorscheme gruvbox
