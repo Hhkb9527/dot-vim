@@ -122,7 +122,7 @@ nnoremap [e         :<C-u>execute 'move -1-'. v:count1<CR>
 nnoremap [<space>   :<C-u>put! =repeat(nr2char(10), v:count1)<CR>'[
 nnoremap ]<space>   :<C-u>put =repeat(nr2char(10), v:count1)<CR>
 
-" 调用寄存器历史
+" list register history
 nnoremap <Leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
 syntax enable
@@ -224,10 +224,12 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-easy-align'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'godlygeek/tabular'
-Plug 'iamcco/markdown-preview.vim'
+" Plug 'iamcco/markdown-preview.vim'
 Plug 'puremourning/vimspector'
 Plug 'Yggdroot/indentLine'
 " Plug 'mileszs/ack.vim'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 call plug#end()
 
 let g:gruvbox_italic=1
