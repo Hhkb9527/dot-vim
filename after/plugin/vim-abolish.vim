@@ -1,3 +1,8 @@
+" Plugin: 'tpope/vim-abolish'
+if !plugpac#has_plugin('vim-abolish')
+  finish
+endif
+
 " Abolish improt import
 " Abolish udpate{,s} update{}
 " Abolish isntall install

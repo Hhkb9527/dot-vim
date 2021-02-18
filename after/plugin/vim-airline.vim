@@ -1,3 +1,8 @@
+" Plugin: vim-airline/vim-airline
+if !plugpac#has_plugin('vim-airline')
+  finish
+endif
+
 let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1

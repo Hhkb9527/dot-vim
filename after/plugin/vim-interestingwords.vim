@@ -1,3 +1,8 @@
+" Plugin: lfv89/vim-interestingwords
+if !plugpac#has_plugin('vim-interestingwords')
+  finish
+endif
+
 noremap <silent> <leader>u :call InterestingWords('n')<cr>
 noremap <silent> <leader>U :call UncolorAllWords()<cr>
 " nnoremap <silent> n :call WordNavigation('forward')<cr>

@@ -1,3 +1,8 @@
+" Plugin: mhinz/vim-startify
+if !plugpac#has_plugin('vim-startify')
+  finish
+endif
+
 " let g:ascii = [
     " \"             ________ ++     ________             ",
     " \"            /VVVVVVVV\++++  /VVVVVVVV\\           ",

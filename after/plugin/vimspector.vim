@@ -1,3 +1,8 @@
+" Plugin: puremourning/vimspector
+if !plugpac#has_plugin('vimspector')
+  finish
+endif
+
 " plugin vimspector 调试插件
 " 配置文件: ~/.vimspector.json
 " 很显然，还有点问题

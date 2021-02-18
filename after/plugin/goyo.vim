@@ -1,3 +1,8 @@
+" Plugin: junegunn/goyo.vim
+if !plugpac#has_plugin('goyo.vim')
+  finish
+endif
+
 map <Leader>gy :Goyo<CR>
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!

@@ -1,3 +1,8 @@
+" Plugin: Yggdroot/LeaderF
+if !plugpac#has_plugin('LeaderF')
+  finish
+endif
+
 " 使用 :LeaderfInstallCExtension 安装模糊匹配算法的C扩展
 if executable('rg')
   let g:Lf_DefaultExternalTool = 'rg'

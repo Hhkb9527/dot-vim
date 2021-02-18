@@ -1,3 +1,8 @@
+" Plugin: svermeulen/vim-yoink
+if !plugpac#has_plugin('vim-yoink')
+  finish
+endif
+
 nmap <c-n> <plug>(YoinkPostPasteSwapBack)
 nmap <c-p> <plug>(YoinkPostPasteSwapForward)
 

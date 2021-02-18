@@ -1,3 +1,8 @@
+" Plugin: dyng/ctrlsf.vim
+if !plugpac#has_plugin('ctrlsf.vim')
+  finish
+endif
+
 nmap     <leader>sf <Plug>CtrlSFPrompt
 vmap     <leader>sf <Plug>CtrlSFVwordPath
 vmap     <leader>sF <Plug>CtrlSFVwordExec

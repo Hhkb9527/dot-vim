@@ -1,3 +1,7 @@
+" Plugin: w0rp/ale
+if !plugpac#has_plugin('ale')
+  finish
+endif
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <leader>alx <Plug>(ale_fix)

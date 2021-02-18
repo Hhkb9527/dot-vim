@@ -1,5 +1,10 @@
 finish
 
+" Plugin: itchyny/lightline.vim
+if !plugpac#has_plugin('lightline.vim')
+  finish
+endif
+
 let s:is_tty = !match(&term, 'linux') || !match(&term, 'win32')
 let g:lightline#bufferline#enable_devicons=1
 
