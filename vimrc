@@ -2,6 +2,13 @@ let g:mapleader=" "
 let s:is_win = has('win32')
 let s:is_gvim = has('gui_running')
 let s:is_tty = !match(&term, 'linux') || !match(&term, 'win32')
+let s:minpac_dir = $HOME . '/.vim/pack/minpac/opt/minpac'
+
+" minpac: A minimal package manager for Vim 8 (and Neovim)
+if !isdirectory(s:minpac_dir)
+  echo !isdirectory(s:minpac_dir)
+  silent! execute printf('!git clone https://github.com/k-takata/minpac.git %s', s:minpac_dir)
+end
 
 if !has('gui_running')
   set t_Co=256
@@ -173,64 +180,123 @@ filetype indent on
 filetype plugin on
 
 
-call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" Plug 'itchyny/lightline.vim'
-" Plug 'mengelbrecht/lightline-bufferline'
-Plug 'itchyny/vim-cursorword'
-Plug 'preservim/nerdcommenter'
-Plug 'lfv89/vim-interestingwords'
-Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'javascript', 'typescript', 'typescript.tsx']  }
-Plug 'othree/html5.vim', {'for': 'html' }
-Plug 'w0rp/ale'
-Plug 'mhinz/vim-startify'
-Plug 'markonm/traces.vim'
-Plug 'ervandew/supertab'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'AndrewRadev/linediff.vim'
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'Yggdroot/LeaderF-marks'
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'airblade/vim-rooter'
-Plug 'dyng/ctrlsf.vim'
-Plug 'svermeulen/vim-yoink'
-Plug 'voldikss/vim-translate-me'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-vinegar'
-Plug 'luochen1990/rainbow'
-Plug 'jiangmiao/auto-pairs'
+" call plug#begin('~/.vim/plugged')
+" Plug 'morhetz/gruvbox'
+" Plug 'ryanoasis/vim-devicons'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" " Plug 'itchyny/lightline.vim'
+" " Plug 'mengelbrecht/lightline-bufferline'
+" Plug 'itchyny/vim-cursorword'
+" Plug 'preservim/nerdcommenter'
+" Plug 'lfv89/vim-interestingwords'
+" Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'javascript', 'typescript', 'typescript.tsx']  }
+" Plug 'othree/html5.vim', {'for': 'html' }
+" Plug 'w0rp/ale'
+" Plug 'mhinz/vim-startify'
+" Plug 'markonm/traces.vim'
+" Plug 'ervandew/supertab'
+" Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/limelight.vim'
+" Plug 'AndrewRadev/linediff.vim'
+" Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+" Plug 'Yggdroot/LeaderF-marks'
+" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'ntpeters/vim-better-whitespace'
+" Plug 'airblade/vim-rooter'
+" Plug 'dyng/ctrlsf.vim'
+" Plug 'svermeulen/vim-yoink'
+" Plug 'voldikss/vim-translate-me'
+" Plug 'tpope/vim-abolish'
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-speeddating'
+" Plug 'tpope/vim-sensible'
+" Plug 'tpope/vim-vinegar'
+" Plug 'luochen1990/rainbow'
+" Plug 'jiangmiao/auto-pairs'
+" " @description: enhances netrw.
+" " @command: I gh ~
+" " let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
+" Plug 'tpope/vim-capslock'
+" " @description: temporary software caps lock.
+" " @command: <c-g>c or gC
+
+" Plug 'tpope/vim-surround'
+" " @description: easily delete, change and add such surroundings in pairs.
+" " @command: ds(, cs({, cS({, ysw(, ySw(, yss(, ySS(, S(, gS(
+
+" Plug 'machakann/vim-highlightedyank'
+" Plug 'junegunn/vim-easy-align'
+" Plug 'octol/vim-cpp-enhanced-highlight'
+" " Plug 'godlygeek/tabular'
+" " Plug 'plasticboy/vim-markdown'
+" Plug 'puremourning/vimspector'
+" Plug 'Yggdroot/indentLine'
+" " Plug 'mileszs/ack.vim'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-notes'
+" call plug#end()
+
+call plugpac#begin()
+Pack 'morhetz/gruvbox'
+Pack 'ryanoasis/vim-devicons'
+Pack 'vim-airline/vim-airline'
+Pack 'vim-airline/vim-airline-themes'
+" Pack 'itchyny/lightline.vim'
+" Pack 'mengelbrecht/lightline-bufferline'
+Pack 'itchyny/vim-cursorword'
+Pack 'preservim/nerdcommenter'
+Pack 'lfv89/vim-interestingwords'
+Pack 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'javascript', 'typescript', 'typescript.tsx']  }
+Pack 'othree/html5.vim', {'for': 'html' }
+Pack 'w0rp/ale'
+Pack 'mhinz/vim-startify'
+Pack 'markonm/traces.vim'
+Pack 'ervandew/supertab'
+Pack 'junegunn/goyo.vim'
+Pack 'junegunn/limelight.vim'
+Pack 'AndrewRadev/linediff.vim'
+Pack 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Pack 'Yggdroot/LeaderF-marks'
+Pack 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Pack 'ntpeters/vim-better-whitespace'
+Pack 'airblade/vim-rooter'
+Pack 'dyng/ctrlsf.vim'
+Pack 'svermeulen/vim-yoink'
+Pack 'voldikss/vim-translate-me'
+Pack 'tpope/vim-abolish'
+Pack 'tpope/vim-fugitive'
+Pack 'tpope/vim-repeat'
+Pack 'tpope/vim-speeddating'
+Pack 'tpope/vim-sensible'
+Pack 'tpope/vim-vinegar'
+Pack 'luochen1990/rainbow'
+Pack 'jiangmiao/auto-pairs'
 " @description: enhances netrw.
 " @command: I gh ~
 " let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
-Plug 'tpope/vim-capslock'
+Pack 'tpope/vim-capslock'
 " @description: temporary software caps lock.
 " @command: <c-g>c or gC
 
-Plug 'tpope/vim-surround'
+Pack 'tpope/vim-surround'
 " @description: easily delete, change and add such surroundings in pairs.
 " @command: ds(, cs({, cS({, ysw(, ySw(, yss(, ySS(, S(, gS(
 
-Plug 'machakann/vim-highlightedyank'
-Plug 'junegunn/vim-easy-align'
-Plug 'octol/vim-cpp-enhanced-highlight'
-" Plug 'godlygeek/tabular'
-" Plug 'plasticboy/vim-markdown'
-Plug 'puremourning/vimspector'
-Plug 'Yggdroot/indentLine'
-" Plug 'mileszs/ack.vim'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
-call plug#end()
+Pack 'machakann/vim-highlightedyank'
+Pack 'junegunn/vim-easy-align'
+Pack 'octol/vim-cpp-enhanced-highlight'
+" Pack 'godlygeek/tabular'
+" Pack 'plasticboy/vim-markdown'
+Pack 'puremourning/vimspector'
+Pack 'Yggdroot/indentLine'
+" Pack 'mileszs/ack.vim'
+Pack 'xolox/vim-misc'
+Pack 'xolox/vim-notes'
+call plugpac#end()
 
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_strings=1
