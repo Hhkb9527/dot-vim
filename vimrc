@@ -179,66 +179,6 @@ filetype on
 filetype indent on
 filetype plugin on
 
-
-" call plug#begin('~/.vim/plugged')
-" Plug 'morhetz/gruvbox'
-" Plug 'ryanoasis/vim-devicons'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" " Plug 'itchyny/lightline.vim'
-" " Plug 'mengelbrecht/lightline-bufferline'
-" Plug 'itchyny/vim-cursorword'
-" Plug 'preservim/nerdcommenter'
-" Plug 'lfv89/vim-interestingwords'
-" Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'javascript', 'typescript', 'typescript.tsx']  }
-" Plug 'othree/html5.vim', {'for': 'html' }
-" Plug 'w0rp/ale'
-" Plug 'mhinz/vim-startify'
-" Plug 'markonm/traces.vim'
-" Plug 'ervandew/supertab'
-" Plug 'junegunn/goyo.vim'
-" Plug 'junegunn/limelight.vim'
-" Plug 'AndrewRadev/linediff.vim'
-" Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-" Plug 'Yggdroot/LeaderF-marks'
-" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'ntpeters/vim-better-whitespace'
-" Plug 'airblade/vim-rooter'
-" Plug 'dyng/ctrlsf.vim'
-" Plug 'svermeulen/vim-yoink'
-" Plug 'voldikss/vim-translate-me'
-" Plug 'tpope/vim-abolish'
-" Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-speeddating'
-" Plug 'tpope/vim-sensible'
-" Plug 'tpope/vim-vinegar'
-" Plug 'luochen1990/rainbow'
-" Plug 'jiangmiao/auto-pairs'
-" " @description: enhances netrw.
-" " @command: I gh ~
-" " let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-
-" Plug 'tpope/vim-capslock'
-" " @description: temporary software caps lock.
-" " @command: <c-g>c or gC
-
-" Plug 'tpope/vim-surround'
-" " @description: easily delete, change and add such surroundings in pairs.
-" " @command: ds(, cs({, cS({, ysw(, ySw(, yss(, ySS(, S(, gS(
-
-" Plug 'machakann/vim-highlightedyank'
-" Plug 'junegunn/vim-easy-align'
-" Plug 'octol/vim-cpp-enhanced-highlight'
-" " Plug 'godlygeek/tabular'
-" " Plug 'plasticboy/vim-markdown'
-" Plug 'puremourning/vimspector'
-" Plug 'Yggdroot/indentLine'
-" " Plug 'mileszs/ack.vim'
-" Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-notes'
-" call plug#end()
-
 call plugpac#begin()
 Pack 'morhetz/gruvbox'
 Pack 'ryanoasis/vim-devicons'
