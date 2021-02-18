@@ -27,5 +27,10 @@
     "snippet": "",
     "typeParameter": "",
     "default": ""
+  },
+  "snippets.extends": {
+    "c": [
+      "cpp"
+    ]
   }
 }

@@ -17,12 +17,12 @@ else
 endif
 
 " Make `<c-k>` used for trigger completion, completion confirm, snippet expand and jump.
-" imap <C-k> <Plug>(coc-snippets-expand-jump)
 inoremap <silent><expr> <c-k>
     \ pumvisible() ? coc#_select_confirm() :
     \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
     \ coc#refresh()
-let g:coc_snippet_next = '<c-k>'
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
 
 " Use tab for trigger completion with characters ahead and navigate
 inoremap <silent><expr> <TAB>
@@ -59,5 +59,3 @@ endfunction
 
 " Symbol renaming
 nmap <F2> <Plug>(coc-rename)
-
-nnoremap <silent> <leader>co :CocList commands<CR>
