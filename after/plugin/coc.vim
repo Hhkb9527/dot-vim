@@ -11,7 +11,7 @@ let g:coc_global_extensions = [
       \ 'coc-vimlsp',
       \ 'coc-yaml',
       \ 'coc-go',
-      \ 'coc-clangd'
+      \ 'coc-clangd',
       \ ]
 
 if has("patch-8.1.1564")
@@ -25,8 +25,7 @@ inoremap <silent><expr> <c-k>
     \ pumvisible() ? coc#_select_confirm() :
     \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
     \ coc#refresh()
-let g:coc_snippet_next = '<c-j>'
-let g:coc_snippet_prev = '<c-k>'
+let g:coc_snippet_prev = '<c-p>'
 
 " Use tab for trigger completion with characters ahead and navigate
 inoremap <silent><expr> <TAB>

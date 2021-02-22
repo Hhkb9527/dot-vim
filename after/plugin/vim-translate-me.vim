@@ -1,6 +1,7 @@
-" Plugin: voldikss/vim-translate-me
-if !plugpac#has_plugin('vim-translate-me')
+" Plugin: voldikss/vim-translator
+if !plugpac#has_plugin('vim-translator')
   finish
 endif
 
 nmap gY <Plug>Translate
+vmap gY <Plug>TranslateV

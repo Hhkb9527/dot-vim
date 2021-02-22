@@ -200,12 +200,12 @@ Pack 'junegunn/limelight.vim'
 Pack 'AndrewRadev/linediff.vim'
 Pack 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Pack 'Yggdroot/LeaderF-marks'
-Pack 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Pack 'neoclide/coc.nvim', { 'branch': 'release' }
 Pack 'ntpeters/vim-better-whitespace'
 Pack 'airblade/vim-rooter'
 Pack 'dyng/ctrlsf.vim'
 Pack 'svermeulen/vim-yoink'
-Pack 'voldikss/vim-translate-me'
+Pack 'voldikss/vim-translator'
 Pack 'tpope/vim-abolish'
 Pack 'tpope/vim-fugitive'
 Pack 'tpope/vim-repeat'
@@ -229,13 +229,12 @@ Pack 'tpope/vim-surround'
 Pack 'machakann/vim-highlightedyank'
 Pack 'junegunn/vim-easy-align'
 Pack 'octol/vim-cpp-enhanced-highlight'
-" Pack 'godlygeek/tabular'
-" Pack 'plasticboy/vim-markdown'
 Pack 'puremourning/vimspector'
 Pack 'Yggdroot/indentLine'
 " Pack 'mileszs/ack.vim'
 Pack 'xolox/vim-misc'
 Pack 'xolox/vim-notes'
+Pack 'voldikss/vim-codelf'
 call plugpac#end()
 
 let g:gruvbox_italic=1
