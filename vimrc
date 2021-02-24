@@ -6,7 +6,6 @@ let s:minpac_dir = $HOME . '/.vim/pack/minpac/opt/minpac'
 
 " minpac: A minimal package manager for Vim 8 (and Neovim)
 if !isdirectory(s:minpac_dir)
-  echo !isdirectory(s:minpac_dir)
   silent! execute printf('!git clone https://github.com/k-takata/minpac.git %s', s:minpac_dir)
 end
 

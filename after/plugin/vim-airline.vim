@@ -10,12 +10,12 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
 
 " let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
 " let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
 
-let g:airline_left_sep = '   '
-let g:airline_right_sep = '   '
+let g:airline_left_alt_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_left_sep = '   '
+let g:airline_right_sep = '   '
 
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.paste = 'Þ'
