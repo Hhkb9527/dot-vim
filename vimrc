@@ -174,9 +174,7 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set showtabline=2
-filetype on
-filetype indent on
-filetype plugin on
+filetype indent plugin on
 
 call plugpac#begin()
 Pack 'morhetz/gruvbox'
