@@ -186,7 +186,6 @@ Pack 'vim-airline/vim-airline-themes'
 Pack 'itchyny/vim-cursorword'
 Pack 'preservim/nerdcommenter'
 Pack 'lfv89/vim-interestingwords'
-Pack 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'javascript', 'typescript', 'typescript.tsx']  }
 Pack 'othree/html5.vim', {'for': 'html' }
 Pack 'w0rp/ale'
 Pack 'mhinz/vim-startify'
