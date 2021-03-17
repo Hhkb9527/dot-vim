@@ -1,4 +1,4 @@
-snippet #
+snippet #!
 	#!/bin/bash
 snippet #!
 	#!/bin/bash -e
@@ -14,7 +14,7 @@ snippet for
 	for (( ${2:i} = 0; $2 < ${1:count}; $2++ )); do
 		${3:#statements}
 	done
-snippet wh
+snippet while
 	while [[ ${1:condition} ]]; do
 		${2:#statements}
 	done
@@ -29,5 +29,9 @@ snippet case
 	esac
 snippet dbg
 	echo -e "\e[32m${1:HereItis.}\e[m"${2}
-snippet nul
+snippet null
 	/dev/null
+snippet function
+	function ${1:func}() {
+		${2:statements}
+	}
