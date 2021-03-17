@@ -230,6 +230,7 @@ Pack 'Yggdroot/indentLine'
 Pack 'xolox/vim-misc'
 Pack 'xolox/vim-notes'
 Pack 'voldikss/vim-codelf'
+Pack 'kshenoy/vim-signature'
 call plugpac#end()
 
 let g:gruvbox_italic=1
