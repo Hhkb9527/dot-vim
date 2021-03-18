@@ -194,7 +194,6 @@ Pack 'vim-airline/vim-airline-themes'
 " Pack 'itchyny/lightline.vim'
 " Pack 'mengelbrecht/lightline-bufferline'
 Pack 'itchyny/vim-cursorword'
-Pack 'preservim/nerdcommenter'
 Pack 'lfv89/vim-interestingwords'
 Pack 'othree/html5.vim', {'for': 'html' }
 Pack 'w0rp/ale'
@@ -242,6 +241,8 @@ Pack 'xolox/vim-notes'
 Pack 'voldikss/vim-codelf'
 "== a plugin to place, toggle and display marks.
 Pack 'kshenoy/vim-signature'
+"== comment plugin, Striving for minimalism
+Pack 'tpope/vim-commentary'
 call plugpac#end()
 
 let g:gruvbox_italic=1
