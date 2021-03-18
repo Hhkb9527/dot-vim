@@ -131,6 +131,16 @@ nnoremap ]<space>   :<C-u>put =repeat(nr2char(10), v:count1)<CR>
 " list register history
 nnoremap <Leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
+" auto generate title when file created
+autocmd BufNewFile *.py exec ":call SetTitle()"
+  func SetTitle()
+    call setline(1,"#!/usr/bin/env python3")
+    call setline(2,"# -*- coding: utf-8 -*-")
+    " call setline(3,"# Copyright (c) 2021, Tencent Inc. All rights reserved.")
+    " call setline(4,"# Author: fufuzhao (fufuzhao@tencent.com)")
+  endfunc
+autocmd BufNewFile * normal G
+
 syntax enable
 set list
 set cursorline
@@ -230,6 +240,7 @@ Pack 'Yggdroot/indentLine'
 Pack 'xolox/vim-misc'
 Pack 'xolox/vim-notes'
 Pack 'voldikss/vim-codelf'
+"== a plugin to place, toggle and display marks.
 Pack 'kshenoy/vim-signature'
 call plugpac#end()
 
