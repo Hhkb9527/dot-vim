@@ -191,8 +191,6 @@ Pack 'morhetz/gruvbox'
 Pack 'ryanoasis/vim-devicons'
 Pack 'vim-airline/vim-airline'
 Pack 'vim-airline/vim-airline-themes'
-" Pack 'itchyny/lightline.vim'
-" Pack 'mengelbrecht/lightline-bufferline'
 Pack 'itchyny/vim-cursorword'
 Pack 'lfv89/vim-interestingwords'
 Pack 'othree/html5.vim', {'for': 'html' }
@@ -231,18 +229,20 @@ Pack 'tpope/vim-surround'
 " @description: easily delete, change and add such surroundings in pairs.
 " @command: ds(, cs({, cS({, ysw(, ySw(, yss(, ySS(, S(, gS(
 
-Pack 'machakann/vim-highlightedyank'
 Pack 'junegunn/vim-easy-align'
-Pack 'octol/vim-cpp-enhanced-highlight'
 Pack 'Yggdroot/indentLine'
-" Pack 'mileszs/ack.vim'
-Pack 'xolox/vim-misc'
-Pack 'xolox/vim-notes'
 Pack 'voldikss/vim-codelf'
+"== enable fenced code block syntax highlighting in markdown documents
+Pack 'tpope/vim-markdown'
+"== Make the yanked region apparent!
+Pack 'machakann/vim-highlightedyank'
 "== a plugin to place, toggle and display marks.
 Pack 'kshenoy/vim-signature'
 "== comment plugin, Striving for minimalism
 Pack 'tpope/vim-commentary'
+
+" Pack 'octol/vim-cpp-enhanced-highlight'
+" Pack 'mileszs/ack.vim'
 call plugpac#end()
 
 let g:gruvbox_italic=1
