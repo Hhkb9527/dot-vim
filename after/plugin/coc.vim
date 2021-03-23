@@ -12,6 +12,7 @@ let g:coc_global_extensions = [
       \ 'coc-yaml',
       \ 'coc-go',
       \ 'coc-clangd',
+      \ 'coc-emoji',
       \ ]
 
 if has("patch-8.1.1564")
