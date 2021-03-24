@@ -6,15 +6,15 @@ let s:minpac_dir = $HOME . '/.vim/pack/minpac/opt/minpac'
 
 " minpac: A minimal package manager for Vim 8 (and Neovim)
 if !isdirectory(s:minpac_dir)
-  silent! execute printf('!git clone https://github.com/k-takata/minpac.git %s', s:minpac_dir)
+    silent! execute printf('!git clone https://github.com/k-takata/minpac.git %s', s:minpac_dir)
 end
 
 if !has('gui_running')
-  set t_Co=256
-  if has("X11")
-    xnoremap <silent>Y "+y
-    nnoremap tp "+P
-  endif
+    set t_Co=256
+    if has("X11")
+        xnoremap <silent>Y "+y
+        nnoremap tp "+P
+    endif
 endif
 
 " enable true color, use following script to check in vim terminal
@@ -27,42 +27,42 @@ if has("termguicolors")
 endif
 
 if !s:is_tty
-  if s:is_win
-    set renderoptions=type:directx
-    let &listchars = 'tab:▸ ,extends:>,precedes:<,nbsp:.'
-    let &showbreak = '-> '
-    highlight VertSplit ctermfg=242
-    augroup vimrc
-      autocmd InsertEnter * set listchars-=trail:⣿
-      autocmd InsertLeave * set listchars+=trail:⣿
-    augroup END
-  elseif has('multi_byte') && &encoding ==# 'utf-8'
-    let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
-    let &fillchars = 'diff: '  " ⣿
-    let &showbreak = '↳ '
-    highlight VertSplit ctermfg=242
-    augroup vimrc
-      autocmd InsertEnter * set listchars-=trail:▚
-      autocmd InsertLeave * set listchars+=trail:▚
-    augroup END
-  else
-    let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
-    "let &fillchars = 'stlnc:#'
-    let &showbreak = '-> '
-    augroup vimrc
-      autocmd InsertEnter * set listchars-=trail:.
-      autocmd InsertLeave * set listchars+=trail:.
-    augroup END
-  endif
+    if s:is_win
+        set renderoptions=type:directx
+        let &listchars = 'tab:▸ ,extends:>,precedes:<,nbsp:.'
+        let &showbreak = '-> '
+        highlight VertSplit ctermfg=242
+        augroup vimrc
+            autocmd InsertEnter * set listchars-=trail:▚
+            autocmd InsertLeave,BufReadPre * set listchars+=trail:▚
+        augroup END
+    elseif has('multi_byte') && &encoding ==# 'utf-8'
+        let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
+        let &fillchars = 'diff: '    " ⣿
+        let &showbreak = '↳ '
+        highlight VertSplit ctermfg=242
+        augroup vimrc
+            autocmd InsertEnter * set listchars-=trail:⣿
+            autocmd InsertLeave,BufReadPre * set listchars+=trail:⣿
+        augroup END
+    else
+        let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
+        "let &fillchars = 'stlnc:#'
+        let &showbreak = '-> '
+        augroup vimrc
+            autocmd InsertEnter * set listchars-=trail:.
+            autocmd InsertLeave,BufReadPre * set listchars+=trail:.
+        augroup END
+    endif
 endif " s:is_tty
 
 " Return to last edit position when opening files
 augroup vimrc
-  autocmd BufReadPost *
+    autocmd BufReadPost *
         \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-        \   exe "normal g'\"" |
+        \     exe "normal g'\"" |
         \ endif
-  autocmd FocusLost * :silent! wa
+    autocmd FocusLost * :silent! wa
 augroup END
 
 " use <F5> to exec python script
@@ -91,13 +91,13 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 
 " if empty($TMUX)
-  " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  " let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+    " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    " let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 " else
-  " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  " let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-  " let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+    " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    " let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    " let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 " endif
 
 let &t_SI = "\<Esc>[6 q"
@@ -117,29 +117,37 @@ noremap <silent> <C-t>l :set splitright<CR>:vsplit<CR>
 noremap <silent> <C-t>h :set nosplitright<CR>:vsplit<CR>
 noremap <silent> <C-t>j :set nosplitbelow<CR>:split<CR>
 noremap <silent> <C-t>k :set splitbelow<CR>:split<CR>
-noremap <silent> <C-t>u  <C-w>t<C-w>H
-noremap <silent> <C-t>i  <C-w>t<C-w>K
+noremap <silent> <C-t>u <C-w>t<C-w>H
+noremap <silent> <C-t>i <C-w>t<C-w>K
 
 " enter/exit paste mode and set/unset number
 noremap <silent> <C-t>p :set paste!<CR>:set number!<CR>:set relativenumber!<CR>
 
-nnoremap ]e         :<C-u>execute 'move +'. v:count1<CR>
-nnoremap [e         :<C-u>execute 'move -1-'. v:count1<CR>
-nnoremap [<space>   :<C-u>put! =repeat(nr2char(10), v:count1)<CR>'[
-nnoremap ]<space>   :<C-u>put =repeat(nr2char(10), v:count1)<CR>
+nnoremap ]e :<C-u>execute 'move +'. v:count1<CR>
+nnoremap [e :<C-u>execute 'move -1-'. v:count1<CR>
+nnoremap [<space> :<C-u>put! =repeat(nr2char(10), v:count1)<CR>'[
+nnoremap ]<space> :<C-u>put =repeat(nr2char(10), v:count1)<CR>
 
 " list register history
-nnoremap <Leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
+nnoremap <Leader>m :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
 " auto generate title when file created
 autocmd BufNewFile *.py exec ":call SetTitle()"
-  func SetTitle()
-    call setline(1,"#!/usr/bin/env python3")
-    call setline(2,"# -*- coding: utf-8 -*-")
-    " call setline(3,"# Copyright (c) 2021, Tencent Inc. All rights reserved.")
-    " call setline(4,"# Author: fufuzhao (fufuzhao@tencent.com)")
-  endfunc
+    func SetTitle()
+        call setline(1,"#!/usr/bin/env python3")
+        call setline(2,"# -*- coding: utf-8 -*-")
+        " call setline(3,"# Copyright (c) 2021, Tencent Inc. All rights reserved.")
+        " call setline(4,"# Author: fufuzhao (fufuzhao@tencent.com)")
+    endfunc
 autocmd BufNewFile * normal G
+
+" Remove all trailing whitespace
+nnoremap <Leader>al :call TrimWhitespace()<CR>
+function! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfunction
 
 syntax enable
 set list
@@ -157,9 +165,11 @@ set wrap
 set showcmd
 set showmode
 set wildmenu
+set wildmode=full
+set wildignore=*.pyc,*.dll,*.exe,*.jpg,*.gif,*.png
 set hlsearch
 set incsearch
-set ignorecase   " smartcase relys on ignorecase
+set ignorecase " smartcase relys on ignorecase
 set smartcase
 set noswapfile
 set signcolumn=auto
@@ -184,7 +194,7 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set showtabline=2
-filetype indent plugin on
+filetype plugin indent on
 
 call plugpac#begin()
 Pack 'morhetz/gruvbox'
@@ -204,7 +214,6 @@ Pack 'AndrewRadev/linediff.vim'
 Pack 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Pack 'Yggdroot/LeaderF-marks'
 Pack 'neoclide/coc.nvim', { 'branch': 'release' }
-Pack 'ntpeters/vim-better-whitespace'
 Pack 'airblade/vim-rooter'
 Pack 'dyng/ctrlsf.vim'
 Pack 'svermeulen/vim-yoink'
