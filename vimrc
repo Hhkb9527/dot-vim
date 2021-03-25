@@ -174,6 +174,8 @@ set smartcase
 set noswapfile
 set signcolumn=auto
 set foldcolumn=0
+set foldmethod=indent
+set foldlevelstart=99
 set history=1000
 set noerrorbells " no BB
 set novisualbell
@@ -183,8 +185,6 @@ set fileencodings=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 set termencoding=utf-8
 set nocompatible
 set backspace=indent,eol,start
-set foldmethod=indent
-set foldlevelstart=99
 set laststatus=2
 set autochdir
 set hidden
