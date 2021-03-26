@@ -1,5 +1,5 @@
 " Plugin: vim-airline/vim-airline
-if !plugpac#has_plugin('vim-airline')
+if !utils#has_plugin('vim-airline')
   finish
 endif
 

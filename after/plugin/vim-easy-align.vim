@@ -1,5 +1,5 @@
 " Plugin: junegunn/vim-easy-align
-if !plugpac#has_plugin('vim-easy-align')
+if !utils#has_plugin('vim-easy-align')
   finish
 endif
 

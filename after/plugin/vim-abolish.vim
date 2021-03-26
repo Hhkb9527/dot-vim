@@ -1,5 +1,5 @@
 " Plugin: 'tpope/vim-abolish'
-if !plugpac#has_plugin('vim-abolish')
+if !utils#has_plugin('vim-abolish')
   finish
 endif
 

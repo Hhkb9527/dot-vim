@@ -1,5 +1,5 @@
 " Plugin: Yggdroot/LeaderF
-if !plugpac#has_plugin('LeaderF')
+if !utils#has_plugin('LeaderF')
   finish
 endif
 

@@ -1,4 +1,4 @@
-/pack/minpac
 .netrwhist
 /plugged/*
 !/plugged/README.md
+/autoload/plug.vim

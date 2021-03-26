@@ -1,5 +1,5 @@
 " Plugin: voldikss/vim-codelf
-if !plugpac#has_plugin('vim-codelf')
+if !utils#has_plugin('vim-codelf')
   finish
 endif
 

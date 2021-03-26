@@ -1,5 +1,5 @@
 " Plugin: Yggdroot/indentLine
-if !plugpac#has_plugin('indentLine')
+if !utils#has_plugin('indentLine')
   finish
 endif
 

@@ -1,5 +1,5 @@
 " Plugin: tpope/vim-markdown
-if !plugpac#has_plugin('vim-markdown')
+if !utils#has_plugin('vim-markdown')
   finish
 endif
 

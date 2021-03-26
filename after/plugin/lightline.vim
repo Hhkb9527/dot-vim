@@ -1,7 +1,7 @@
 finish
 
 " Plugin: itchyny/lightline.vim
-if !plugpac#has_plugin('lightline.vim')
+if !utils#has_plugin('lightline.vim')
   finish
 endif
 

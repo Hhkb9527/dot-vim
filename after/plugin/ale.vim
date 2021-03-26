@@ -1,5 +1,5 @@
 " Plugin: w0rp/ale
-if !plugpac#has_plugin('ale')
+if !utils#has_plugin('ale')
   finish
 endif
 nmap <silent> <C-j> <Plug>(ale_next_wrap)

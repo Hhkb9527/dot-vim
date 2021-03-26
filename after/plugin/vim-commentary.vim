@@ -1,5 +1,5 @@
 " Plugin: tpope/vim-commentary
-if !plugpac#has_plugin('vim-commentary')
+if !utils#has_plugin('vim-commentary')
   finish
 endif
 

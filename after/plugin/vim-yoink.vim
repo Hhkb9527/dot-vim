@@ -1,5 +1,5 @@
 " Plugin: svermeulen/vim-yoink
-if !plugpac#has_plugin('vim-yoink')
+if !utils#has_plugin('vim-yoink')
   finish
 endif
 

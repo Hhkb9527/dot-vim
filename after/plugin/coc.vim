@@ -1,5 +1,5 @@
 " Plugin: neoclide/coc.nvim
-if !plugpac#has_plugin('coc.nvim') || matchstr(&rtp, 'coc.nvim') == ''
+if !utils#has_plugin('coc.nvim') || matchstr(&rtp, 'coc.nvim') == ''
   finish
 endif
 

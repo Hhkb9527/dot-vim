@@ -1,5 +1,5 @@
 " Plugin: junegunn/goyo.vim
-if !plugpac#has_plugin('goyo.vim')
+if !utils#has_plugin('goyo.vim')
   finish
 endif
 

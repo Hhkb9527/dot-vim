@@ -1,5 +1,5 @@
 " Plugin: dyng/ctrlsf.vim
-if !plugpac#has_plugin('ctrlsf.vim')
+if !utils#has_plugin('ctrlsf.vim')
   finish
 endif
 

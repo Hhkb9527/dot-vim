@@ -1,5 +1,5 @@
 " Plugin: lfv89/vim-interestingwords
-if !plugpac#has_plugin('vim-interestingwords')
+if !utils#has_plugin('vim-interestingwords')
   finish
 endif
 

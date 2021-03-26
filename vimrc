@@ -2,12 +2,12 @@ let g:mapleader=" "
 let s:is_win = has('win32')
 let s:is_gvim = has('gui_running')
 let s:is_tty = !match(&term, 'linux') || !match(&term, 'win32')
-let s:minpac_dir = $HOME . '/.vim/pack/minpac/opt/minpac'
+let s:plugin_dir = $HOME . '/.vim/autoload/plug.vim'
 
-" minpac: A minimal package manager for Vim 8 (and Neovim)
-if !isdirectory(s:minpac_dir)
-    silent! execute printf('!git clone https://github.com/k-takata/minpac.git %s', s:minpac_dir)
-end
+" auto download plug.vim plugin manager
+if !filereadable(s:plugin_dir)
+    execute printf('!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+endif
 
 if !has('gui_running')
     set t_Co=256
@@ -194,66 +194,63 @@ set shortmess+=c
 set showtabline=2
 filetype plugin indent on
 
-call plugpac#begin()
-Pack 'morhetz/gruvbox'
-Pack 'ryanoasis/vim-devicons'
-Pack 'vim-airline/vim-airline'
-Pack 'vim-airline/vim-airline-themes'
-Pack 'itchyny/vim-cursorword'
-Pack 'lfv89/vim-interestingwords'
-Pack 'othree/html5.vim', {'for': 'html' }
-Pack 'w0rp/ale'
-Pack 'mhinz/vim-startify'
-Pack 'markonm/traces.vim'
-Pack 'ervandew/supertab'
-Pack 'junegunn/goyo.vim'
-Pack 'junegunn/limelight.vim'
-Pack 'AndrewRadev/linediff.vim'
-Pack 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Pack 'Yggdroot/LeaderF-marks'
-Pack 'neoclide/coc.nvim', { 'branch': 'release' }
-Pack 'airblade/vim-rooter'
-Pack 'dyng/ctrlsf.vim'
-Pack 'svermeulen/vim-yoink'
-Pack 'voldikss/vim-translator'
-Pack 'tpope/vim-abolish'
-Pack 'tpope/vim-fugitive'
-Pack 'tpope/vim-repeat'
-Pack 'tpope/vim-speeddating'
-Pack 'tpope/vim-sensible'
-Pack 'tpope/vim-vinegar'
-Pack 'luochen1990/rainbow'
-Pack 'jiangmiao/auto-pairs'
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/vim-cursorword'
+Plug 'lfv89/vim-interestingwords'
+Plug 'othree/html5.vim', {'for': 'html' }
+Plug 'w0rp/ale'
+Plug 'mhinz/vim-startify'
+Plug 'markonm/traces.vim'
+Plug 'ervandew/supertab'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'AndrewRadev/linediff.vim'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'Yggdroot/LeaderF-marks'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'airblade/vim-rooter'
+Plug 'dyng/ctrlsf.vim'
+Plug 'svermeulen/vim-yoink'
+Plug 'voldikss/vim-translator'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-vinegar'
+Plug 'luochen1990/rainbow'
+Plug 'jiangmiao/auto-pairs'
 " @description: enhances netrw.
 " @command: I gh ~
 " let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
-Pack 'tpope/vim-capslock'
+Plug 'tpope/vim-capslock'
 " @description: temporary software caps lock.
 " @command: <c-g>c or gC
 
-Pack 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " @description: easily delete, change and add such surroundings in pairs.
 " @command: ds(, cs({, cS({, ysw(, ySw(, yss(, ySS(, S(, gS(
 
-Pack 'junegunn/vim-easy-align'
-Pack 'Yggdroot/indentLine'
-Pack 'voldikss/vim-codelf'
+Plug 'junegunn/vim-easy-align'
+Plug 'Yggdroot/indentLine'
+Plug 'voldikss/vim-codelf'
 
 "== enable fenced code block syntax highlighting in markdown documents
-Pack 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown'
 "== Make the yanked region apparent!
-Pack 'machakann/vim-highlightedyank'
+Plug 'machakann/vim-highlightedyank'
 "== a plugin to place, toggle and display marks.
-Pack 'kshenoy/vim-signature'
+Plug 'kshenoy/vim-signature'
 "== comment plugin, Striving for minimalism
-Pack 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 "== This repository contains snippets files for various programming languages.
-Pack 'honza/vim-snippets'
-
-" Pack 'octol/vim-cpp-enhanced-highlight'
-" Pack 'mileszs/ack.vim'
-call plugpac#end()
+Plug 'honza/vim-snippets'
+call plug#end()
 
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_strings=1

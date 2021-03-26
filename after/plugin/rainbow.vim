@@ -1,5 +1,5 @@
 " Plugin: luochen1990/rainbow
-if !plugpac#has_plugin('rainbow')
+if !utils#has_plugin('rainbow')
   finish
 endif
 
