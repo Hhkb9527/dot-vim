@@ -1,3 +1,4 @@
+" TODO: refact this function with vim-plug interface
 function! utils#has_plugin(plugin)
     return index(s:get_plugin_list(), a:plugin) != -1
 endfunction
