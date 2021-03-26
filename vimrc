@@ -250,6 +250,8 @@ Pack 'machakann/vim-highlightedyank'
 Pack 'kshenoy/vim-signature'
 "== comment plugin, Striving for minimalism
 Pack 'tpope/vim-commentary'
+"== This repository contains snippets files for various programming languages.
+Pack 'honza/vim-snippets'
 
 " Pack 'octol/vim-cpp-enhanced-highlight'
 " Pack 'mileszs/ack.vim'
