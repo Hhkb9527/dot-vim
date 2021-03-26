@@ -106,8 +106,6 @@ let &t_EI = "\<Esc>[2 q"
 
 inoremap jk <ESC>:w<CR>
 noremap <silent> <Leader><CR> :nohlsearch<CR>
-noremap <silent> <Leader>n :bn<CR>
-noremap <silent> <Leader>p :bp<CR>
 
 xnoremap < <gv
 xnoremap > >gv
