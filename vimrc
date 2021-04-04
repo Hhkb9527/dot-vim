@@ -105,7 +105,6 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 inoremap jk <ESC>:w<CR>
-noremap <silent> <Leader><CR> :nohlsearch<CR>
 
 xnoremap < <gv
 xnoremap > >gv
@@ -254,5 +253,15 @@ call plug#end()
 
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_strings=1
+let g:gruvbox_contrast_dark="hard"
+
+nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
+nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
+nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
+
+nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
+nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
+nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
+
 set background=dark
-colorscheme gruvbox
+autocmd VimEnter * ++nested colorscheme gruvbox
