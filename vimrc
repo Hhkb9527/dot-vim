@@ -264,4 +264,4 @@ nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
 nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
 
 set background=dark
-autocmd VimEnter * ++nested colorscheme gruvbox
+colorscheme gruvbox
