@@ -195,6 +195,8 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-gruvbox8'
+Plug 'sainnhe/gruvbox-material'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -249,12 +251,14 @@ Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-commentary'
 "== This repository contains snippets files for various programming languages.
 Plug 'honza/vim-snippets'
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
 call plug#end()
 
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_strings=1
 let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_plugin_hi_groups=1
+let g:gruvbox_filetype_hi_groups=1
 
 nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
 nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
@@ -266,3 +270,5 @@ nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
 
 set background=dark
 colorscheme gruvbox
+" colorscheme gruvbox8
+" colorscheme onedark
