@@ -31,6 +31,7 @@ let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'typescript': ['eslint'],
   \ 'python': ['pylint', 'mypy'],
+  \ 'cpp': ['clang-tidy -extra-arg=-std=c++17']
   \ }
 let g:ale_fixers = {
   \ 'vim': [],
@@ -39,9 +40,9 @@ let g:ale_fixers = {
   \ 'javascriptreact': ['prettier', 'eslint'],
   \ 'typescriptreact': ['prettier', 'eslint'],
   \ 'json': ['jq'],
-  \ 'html': ['tidy'],
+  \ 'html': ['prettier'],
   \ 'c': ['clang-format'],
   \ 'cpp': ['clang-format'],
   \ 'python': ['black', 'isort'],
-  \ 'go': ['goimports'],
+  \ 'go': ['gofmt','goimports'],
   \ }
