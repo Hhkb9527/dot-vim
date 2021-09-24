@@ -128,14 +128,21 @@ nnoremap ]<space> :<C-u>put =repeat(nr2char(10), v:count1)<CR>
 " list register history
 nnoremap <Leader>m :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
-" auto generate title when file created
-autocmd BufNewFile *.py exec ":call SetTitle()"
-    func SetTitle()
+func SetTitle()
+    if &filetype == "python"
         call setline(1,"#!/usr/bin/env python3")
         call setline(2,"# -*- coding: utf-8 -*-")
         " call setline(3,"# Copyright (c) 2021, Tencent Inc. All rights reserved.")
         " call setline(4,"# Author: fufuzhao (fufuzhao@tencent.com)")
-    endfunc
+    elseif &filetype == "cpp"
+        call setline(1,"/**********************************")
+        call setline(2," *  create user: fufuzhao")
+        call setline(3," *  create date: ".strftime("%Y-%m-%d"))
+        call setline(4," **********************************/")
+    endif
+endfunc
+" auto generate title when file created
+autocmd BufNewFile *.py,*.cc,*.cpp exec ":call SetTitle()"
 autocmd BufNewFile * normal G
 
 " Remove all trailing whitespace
