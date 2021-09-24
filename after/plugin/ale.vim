@@ -31,7 +31,8 @@ let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'typescript': ['eslint'],
   \ 'python': ['pylint', 'mypy'],
-  \ 'cpp': ['clang-tidy -extra-arg=-std=c++17']
+  \ 'cpp': ['clang-tidy -extra-arg=-std=c++17'],
+  \ 'cmake': ['cmake-format'],
   \ }
 let g:ale_fixers = {
   \ 'vim': [],
