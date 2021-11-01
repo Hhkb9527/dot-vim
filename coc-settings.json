@@ -34,6 +34,6 @@
     ]
   },
   "clangd.fallbackFlags": [
-    "-std=c++17"
+    "-std=c++11"
   ]
 }
