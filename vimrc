@@ -132,10 +132,10 @@ func SetTitle()
     if &filetype == "python"
         call setline(1,"#!/usr/bin/env python3")
         call setline(2,"# -*- coding: utf-8 -*-")
-        call setline(3,"# Copyright 2020, Tencent Inc.  All rights reserved.")
-        call setline(4,"# Author: xxx (xxx@tencent.com)")
+        call setline(3,"# Copyright 2021, Tencent Inc.  All rights reserved.")
+        call setline(4,"# Author: xxx@tencent.com (xxx)")
     elseif &filetype == "cpp"
-        call setline(1,"// Copyright 2020 Tencent Inc.  All rights reserved.")
+        call setline(1,"// Copyright 2021 Tencent Inc.  All rights reserved.")
         call setline(2,"// Author: xxx@tencent.com (xxx)")
     endif
 endfunc
