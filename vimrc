@@ -132,13 +132,11 @@ func SetTitle()
     if &filetype == "python"
         call setline(1,"#!/usr/bin/env python3")
         call setline(2,"# -*- coding: utf-8 -*-")
-        " call setline(3,"# Copyright (c) 2021, Tencent Inc. All rights reserved.")
-        " call setline(4,"# Author: fufuzhao (fufuzhao@tencent.com)")
+        call setline(3,"# Copyright 2020, Tencent Inc.  All rights reserved.")
+        call setline(4,"# Author: xxx (xxx@tencent.com)")
     elseif &filetype == "cpp"
-        call setline(1,"/**********************************")
-        call setline(2," *  create user: fufuzhao")
-        call setline(3," *  create date: ".strftime("%Y-%m-%d"))
-        call setline(4," **********************************/")
+        call setline(1,"// Copyright 2020 Tencent Inc.  All rights reserved.")
+        call setline(2,"// Author: xxx@tencent.com (xxx)")
     endif
 endfunc
 " auto generate title when file created
@@ -259,6 +257,10 @@ Plug 'tpope/vim-commentary'
 "== This repository contains snippets files for various programming languages.
 Plug 'honza/vim-snippets'
 " Plug 'joshdick/onedark.vim'
+
+" 编写文档
+" Any fool can write code that a computer can understand. Good programmers write code that humans can understand. -- Martin Fowler, 1999
+" Plug 'kkoomen/vim-doge', { 'do': { -> doge#install()  }  } " 插件报错
 call plug#end()
 
 " let g:gruvbox_italic=1
