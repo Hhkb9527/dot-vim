@@ -258,9 +258,11 @@ Plug 'tpope/vim-commentary'
 Plug 'honza/vim-snippets'
 " Plug 'joshdick/onedark.vim'
 
-" 编写文档
 " Any fool can write code that a computer can understand. Good programmers write code that humans can understand. -- Martin Fowler, 1999
-" Plug 'kkoomen/vim-doge', { 'do': { -> doge#install()  }  } " 插件报错
+" 若使用插件时报错: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found, 请访问网址:
+"   https://github.com/cdr/code-server/issues/766#:~:text=I%20read%20somewhere%20that%20someone,6.0.26%20/usr/lib64/libstdc%2B%2B.so.6
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install()  }  }
+
 call plug#end()
 
 " let g:gruvbox_italic=1
