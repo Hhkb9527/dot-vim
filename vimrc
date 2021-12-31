@@ -128,6 +128,7 @@ nnoremap ]<space> :<C-u>put =repeat(nr2char(10), v:count1)<CR>
 " list register history
 nnoremap <Leader>m :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
+" auto generate title when file created
 func SetTitle()
     if &filetype == "python"
         call setline(1,"#!/usr/bin/env python3")
@@ -139,7 +140,6 @@ func SetTitle()
         call setline(2,"// Author: xxx@tencent.com (xxx)")
     endif
 endfunc
-" auto generate title when file created
 autocmd BufNewFile *.py,*.cc,*.cpp exec ":call SetTitle()"
 autocmd BufNewFile * normal G
 
@@ -230,17 +230,14 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
-" @description: enhances netrw.
-" @command: I gh ~
-" let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
-Plug 'tpope/vim-capslock'
 " @description: temporary software caps lock.
 " @command: <c-g>c or gC
+Plug 'tpope/vim-capslock'
 
-Plug 'tpope/vim-surround'
 " @description: easily delete, change and add such surroundings in pairs.
 " @command: ds(, cs({, cS({, ysw(, ySw(, yss(, ySS(, S(, gS(
+Plug 'tpope/vim-surround'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'Yggdroot/indentLine'
