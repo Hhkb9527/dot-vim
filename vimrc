@@ -207,7 +207,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/vim-cursorword'
 Plug 'lfv89/vim-interestingwords'
-Plug 'othree/html5.vim', {'for': 'html' }
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
 Plug 'markonm/traces.vim'
@@ -253,12 +252,15 @@ Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-commentary'
 "== This repository contains snippets files for various programming languages.
 Plug 'honza/vim-snippets'
-" Plug 'joshdick/onedark.vim'
 
 " Any fool can write code that a computer can understand. Good programmers write code that humans can understand. -- Martin Fowler, 1999
 " 若使用插件时报错: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found, 请访问网址:
 "   https://github.com/cdr/code-server/issues/766#:~:text=I%20read%20somewhere%20that%20someone,6.0.26%20/usr/lib64/libstdc%2B%2B.so.6
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install()  }  }
+
+" Plug 'mattn/emmet-vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'othree/html5.vim', {'for': 'html' }
 
 call plug#end()
 
