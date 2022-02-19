@@ -13,6 +13,8 @@ let g:coc_global_extensions = [
       \ 'coc-go',
       \ 'coc-clangd',
       \ 'coc-emoji',
+      \ 'coc-html',
+      \ 'coc-prettier',
       \ ]
 
 if has("patch-8.1.1564")
@@ -63,3 +65,6 @@ endfunction
 
 " Symbol renaming
 nmap <F2> <Plug>(coc-rename)
+
+" 针对不同文件类型制定自动格式化工具
+autocmd FileType html nnoremap <buffer> <leader>alx :CocCommand prettier.forceFormatDocument<CR>

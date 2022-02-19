@@ -35,13 +35,11 @@ let g:ale_linters = {
   \ 'cmake': ['cmake-format'],
   \ }
 let g:ale_fixers = {
-  \ 'vim': [],
   \ 'javascript': ['prettier', 'eslint'],
   \ 'typescript': ['prettier', 'eslint'],
   \ 'javascriptreact': ['prettier', 'eslint'],
   \ 'typescriptreact': ['prettier', 'eslint'],
   \ 'json': ['jq'],
-  \ 'html': ['prettier'],
   \ 'c': ['clang-format'],
   \ 'cpp': ['clang-format'],
   \ 'python': ['black', 'isort'],
