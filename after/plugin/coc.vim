@@ -68,3 +68,6 @@ nmap <F2> <Plug>(coc-rename)
 
 " 针对不同文件类型制定自动格式化工具
 autocmd FileType html nnoremap <buffer> <leader>alx :CocCommand prettier.forceFormatDocument<CR>
+autocmd FileType javascript nnoremap <buffer> <leader>alx :CocCommand prettier.forceFormatDocument<CR>
+autocmd FileType typescript nnoremap <buffer> <leader>alx :CocCommand prettier.forceFormatDocument<CR>
+autocmd FileType vue nnoremap <buffer> <leader>alx :CocCommand prettier.forceFormatDocument<CR>

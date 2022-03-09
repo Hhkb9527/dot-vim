@@ -36,5 +36,9 @@
   "clangd.fallbackFlags": [
     "-std=c++11"
   ],
-  "prettier.printWidth": 120
+  "prettier.printWidth": 120,
+  "prettier.tabWidth": 2,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "always"
 }
